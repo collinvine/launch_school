@@ -1,0 +1,27 @@
+# a method that returns the sum of two integers
+
+define a method name sum and takes two arguments, num1 and num1
+add num1 and num2
+
+actual code:
+
+def sum(num1, num2)
+  num1 + num2
+end
+
+# a method that takes an array of strings, and returns a string that is all those strings concatenated together
+
+define a method named concatenate and takes one argument
+create a new variable new_string to save the values to
+iterate over the array and add each string to new_string
+return the new_string variable at the end
+
+# a method that takes an array of integers, and returns a new array with every other element
+
+define a new method that takes one argument
+iterate over the array
+save even (or odd) values to a new array
+return new array
+ 
+
+
