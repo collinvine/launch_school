@@ -1,0 +1,36 @@
+A function that returns the sum of two numbers
+
+- define a function
+- it takes two numbers as parameters
+- add those two numbers
+- return the result
+
+edge cases: what if not number?
+
+**************
+
+A function that takes an array of strings, and returns a string that is all those strings concatenated together
+
+Given an array of strings
+
+Iterate through the collection one by one
+  - create a new variable for the string
+  - each iteration through, concatenate the item in the array to the string
+    - separate each item with a space
+
+After iterating through, return the saved string
+
+**************
+
+A function that takes an array of integers, and returns a new array with every other element
+
+Given an array of integers
+
+Create a new empty array
+
+Iterate through the given array
+  - take the index of the item
+  - if it is odd then add it to the new array
+    - else skip that item in the array and go to the next item
+
+Once finished looping through the array, print the new array with odd values
