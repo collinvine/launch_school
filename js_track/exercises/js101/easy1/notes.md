@@ -7,6 +7,56 @@
 
 ---
 
+burrito with shredded chicken & pico degayo instead of salsa
+
+
+# sum_or_product.js
+
+**Understand**
+input
+  * number, captured as a string
+  * response for sum or multiple
+
+output
+  * print the result to the console
+
+rules
+  * get user number
+    * check for
+      * non-negative
+      * non-zero
+      * non-float?
+  * get user response to sum or product
+    * if sum, sum all numbers from 1 to number
+    * if product, multiply all numbers from 1 to number
+
+**Test cases**
+
+Sum 5 = 15
+Product 5 = 120
+Sum 0 = error, try again
+Sum -1 = error, only positive numbers
+Product 10 = 3,628,800
+
+**Data**
+input is string
+convert to number
+output is number
+
+**Algorithm**
+Get user input
+ * number
+ * operation
+
+Calculate value
+  * check if operation is "s" or "p"
+  * loop from 1 to number
+  * each loop, sum || multiply numbers
+  * return result
+
+Print result to screen
+
+
 # tipCalculator.js
 
 **Understand**
