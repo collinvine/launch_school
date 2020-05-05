@@ -7,8 +7,123 @@
 
 ---
 
-burrito with shredded chicken & pico degayo instead of salsa
+# multiples.js
 
+**Understand**
+input
+  * number
+output
+  * sum of numbers that are multiples of 3 & 5
+rules
+  * ask the user for a number
+    * require readline sync
+  * pass number into multisum function
+    * loop over numbers starting at 1
+    * if current number is a multiple of 3 or 5, add. else, skip
+    * end loop after computing inputted number
+    * return the total sum 
+
+
+**Test Cases**
+
+multisum(3);       // 3
+multisum(5);       // 8
+multisum(10);      // 33
+multisum(1000);    // 234168
+
+**Data**
+input: string (need to convert)
+output: numbers
+
+**Algorithm**
+get response from user
+convert to number
+loop over numbers from 1 to response
+if number is multiple of 3 or 5, add
+ * skip 1 and 2, not multiples of
+ * start at 3
+ * if % 3 === 0 || % 5 === 0, sum; else skip
+else skip
+return sum
+
+
+# leap_years.js
+
+**Understand**
+
+input
+  * integer, represent a year
+  * any value greater than 0
+
+output
+  * true / false
+
+rules
+  * leapYear function with passed argument (year)
+  * evaluate if the year is a leap year
+    * leap year is any year divisible by 4
+      * unless also divisible by 100 then not leap year
+      * unless also divisible by 400
+    * every leap year HAS to be divisible by 4
+      * that can be the first check
+      * then
+  * return true/false
+
+**test**
+See problem page
+
+**Data**
+input: number
+output: number
+
+**algorithm**
+* accept 1 argument to leapYear function
+* check if year is a leap year
+  * year % 4 === 0
+  * if yes, then:
+    * year % 100 === 0 && year % 400 === 0
+    * false
+
+
+
+
+# short_long_short.js
+
+**Understand**
+input
+  * two strings
+
+output
+  * return one string
+
+rules
+  * main problem is to compare the string length
+  * assign strings to variables
+  * the concatenate
+    * short + long + short
+  * so, how to compare length?
+    * if a.length > b.length
+      * a+b+a
+    * else
+      * b+a+b
+
+**Test cases**
+('abc', 'defgh');   -->   "abcdefghabc"
+('abcde', 'fgh');   -->   "fghabcdefgh"
+('', 'xyz');        -->   "xyz"
+
+**Data**
+strings (input and output)
+_what if not a string? need to validate? or just treat as string?_
+
+**Algorithm**
+
+* declare new function shortLongShort with two arguments word1 and word2
+* let newWord = ""
+* compare lengths of words
+  * if word1 is shorter, word1+word2+word1
+  * if word2 is longer, word2+word1+word2
+* return new word
 
 # sum_or_product.js
 
