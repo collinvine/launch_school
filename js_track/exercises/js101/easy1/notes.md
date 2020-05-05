@@ -7,6 +7,44 @@
 
 ---
 
+# ascii-values.js
+
+**Understand**
+input
+  * string (letter, word, sentence)
+output
+  * sum of all ascii values of letters
+rules
+  * asciiValue function accepts string
+  * split string
+  * loop over split string
+    * calculate ascii value
+    * add to total
+  * return total
+
+**test cases**
+
+asciiValue('Four score');         // 984
+asciiValue('Launch School');      // 1251
+asciiValue('a');                  // 97
+asciiValue('');                   // 0
+
+**data**
+
+input: string
+function: object (array)
+output: number
+
+**algorithm**
+instantiate asciiValue function
+split string into new saved array
+define new total variable
+loop over array
+  get ascii value of character
+  add to total
+return total
+
+
 # multiples.js
 
 **Understand**
@@ -21,7 +59,7 @@ rules
     * loop over numbers starting at 1
     * if current number is a multiple of 3 or 5, add. else, skip
     * end loop after computing inputted number
-    * return the total sum 
+    * return the total sum
 
 
 **Test Cases**
