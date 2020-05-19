@@ -1,3 +1,34 @@
+# hard-q4.js
+
+**understand**
+input   
+  * string
+output
+  * boolean
+rules
+  * take a string
+  * evaluate whether it's an ip address
+    * return true if yes
+      * must contain four dot-separated numbers between 0–255
+    * return false if no
+
+**test**
+4.5.5 ==> false
+1.2.3.4.5 ==> false
+101.99.1.15 ==> true
+
+**data**
+input: string
+algorithm: array
+return: boolean
+
+**algorithm**
+how to check if more or less than 4 digits?
+  * array.length
+  * if !== 4, return false
+
+
+
 # med1-q3.js
 
 **understand**
