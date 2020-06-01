@@ -1,3 +1,106 @@
+# easy3.10 century.js
+
+**understand**
+
+
+
+
+**algo**
+Need to find two things:
+  1. the century
+  2. the suffix
+
+The logic for century can be to devide the num by 100 and round up to nearest integer: `Math.ceil(year / 100)` --> century
+
+That leaves the logic for the suffix.
+
+1st
+2nd
+3rd
+4–10th
+21st
+22nd
+23rd
+31st
+
+So, need to convert the num to string, find the last index, determine what it is, and return the appropriate suffix. `num.toString().slice(-1)`
+
+
+
+# easy3.9 cleanup.js
+
+**understand**
+input: string
+output: string
+rules
+  * take in string with words and non-alphabetic chars
+    * _what's a non-alphabetic char?_
+  * check all chars
+    * if alphabetic char, keep
+    * if non alphabetic char convert to space
+    * if more than 1 space occur in a row, only include 1
+    * the return string should not have multiple spaces
+    * but can have spaces at start and end
+  * return new string with only alph chars
+
+**tests**
+cleanUp("---what's my +& line?");    // " what s my line "
+
+**data**
+input: string
+output: string
+algo:
+  * array to check each char
+  * maybe object to test whether char is alphabetic?
+    * could have obj with inclusive chars?
+    * I wonder if there's another way to test that?
+
+**algo**
+
+Split given string into array separated by each char
+Iterate through each char
+  If char is alphabetic, push to new string
+  If char is not
+    Test if there's two non-alph chars in a row
+      if no, convert char into space and add to string
+      if yes, discard current char
+Return a new string
+
+
+
+
+
+
+
+
+# easy3.4 fibonacci.js
+
+**understand**
+input: number, representing length
+output: number, representing index
+rules
+  * write a function that takes one arg
+  * the arg represents the length of the number
+  * the return should be the index of the first num in the fibonacci sequence that has a length equal to the passed number
+
+**tests**
+findFibonacciIndexByLength(2);       // 7
+findFibonacciIndexByLength(10);      // 45
+findFibonacciIndexByLength(16);      // 74
+
+**data**
+input: number
+output: number
+algo: array
+
+**algorithm**
+* set fibonacci array equal to [1]
+* write an algorithm to check if the last number in array has the length submitted (array.length - 1)
+  * if it does, get the index and return
+  * if it doesn't, calculate the next fibonacci num, push to array, and check again
+  * keep looping until you find the first num with that length
+
+
 # easy3.3 stringy.js
 
 **understand**
