@@ -1,7 +1,10 @@
 # prob14.js
 
 **understand**
-input: 
+input: object with obj values w/ nested arrays
+output: array w/ nested arrays
+rules:
+  *
 
 # prob13.js
 
