@@ -1,3 +1,164 @@
+# Twentyone.js
+
+## Psuedocode
+1. Initialize deck
+2. Deal cards to player and dealer
+3. Player turn: hit or stay
+   - repeat until bust or stay
+4. If player bust, dealer wins.
+5. Dealer turn: hit or stay
+   - repeat until total >= 17
+6. If dealer busts, player wins.
+7. Compare cards and declare winner.
+
+## Data Structure for Deck, Player, and Dealer hands
+
+I need to store both keys (cards) and values (how many are left in the deck);
+
+The only prob. it seems about an object is that the probability of choosing a card doesn't match reality, unless my random index first takes … no, that doesn't work.
+
+{
+  2: 4,
+  3: 4,
+  4: 4,
+  5: 4,
+  6: 4,
+  7: 4,
+  8: 4,
+  9: 4,
+  10: 4,
+  jack: 4,
+  queen: 4,
+  king: 4,
+  ace: 4
+}
+
+[
+  2, 2, 2, 2,
+  3, 3, 3, 3,
+  4, 4, 4, 4,
+  5, 5, 5, 5,
+  6, 6, 6, 6,
+  7, 7, 7, 7,
+  8, 8, 8, 8,
+  9, 9, 9, 9,
+  10, 10, 10, 10,
+  'jack', 'jack', 'jack', jack,
+  'queen', 'queen', 'queen', 'queen',
+  'king', 'king', 'king', 'king',
+  'ace', 'ace', 'ace', ace
+]
+
+
+## Calculating aces
+
+**Logic**
+
+If one ace in hand:
+  * if sum of non-ace cards is < 11, ace = 11;
+  * if sum of non-ace cards is >= 11, ace = 1;
+
+If two ace in hand:
+  * if sum of non-ace cards is >= 10
+    * ace1 = 1;
+    * ace2 = 1;
+  * if sum of non-ace cards is <= 9
+    * ace1 = 11;
+    * ace2 = 1;
+
+Other problems:
+  * how to filter out aces from non-aces?
+    * need to sum non-aces
+    * need to assign value to aces
+  * how to assign values?
+
+start
+run checkForAces function and pass in hand
+if aces, run calculateAces function
+  split non-aces and aces
+  check how many aces
+    if one ace
+      sum non-aces and assign value to ace
+        11 if sum is >= 11
+        1 if sum is < 11
+    if two aces
+      sum non-aces and assign value to aces
+        if sum is >= 10
+          aceOne = 1
+          aceTwo = 1
+        if sum is <= 9
+          aceOne = 11
+          aceTwo = 1
+
+## next:
+
+* implement the busted check ✅
+* implement the aces logic ✅
+* implement dealer logic ✅
+* run checks each turn ✅
+* show winner
+
+
+## busted
+need to sum the cards
+hmm, also need to know the value of cards. I see.
+
+input: nested array
+output: boolean (true or false)
+rules:
+  * pass in player hand
+  * sum value of cards in hand
+    * check value
+    * know what number value it is
+    * how to do that?
+  * if aces present, run ace logic
+  * calculate total
+  * if total is > 21, true
+  * else false
+
+values {
+  J: 10,
+  Q: 10,
+  K: 10
+}
+
+wait, that's not needed, they all the same. Maybe I can have a face card constant and check if the value is included in facecard constant
+
+They are also all strings, so need to convert to numbers.
+
+## dealer logic
+
+input: dealer hand as nested array
+output: /
+rules
+  * if dealer total is less than 17, hit
+  * else stay
+  * if over 21, busted
+
+need to loop
+  count dealer hand
+  if hand is less than 17, hit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------
+
 # Choose who goes first
 Need to start off by asking the user who should go first, then save that to a variable. Options
 
@@ -8,7 +169,7 @@ need to take that input, analyze just the lowercase first letter, and then set t
 
 Next, during game play, it should analyze who's turn it is from that variable and prompt that to go.
 
-Next, before the next turn, it should switch who's the active player. I've already seen how to do this, so it seems easy using a ternary operator. 
+Next, before the next turn, it should switch who's the active player. I've already seen how to do this, so it seems easy using a ternary operator.
 
 prompt("Who should go first? (Player / p or Computer / c)")
 let activePlayer = readline.question().toLowerCase()[0];
