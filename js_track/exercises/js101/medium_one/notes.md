@@ -1,3 +1,157 @@
+# fibonacci memoization
+
+The current implementation of our fibonacci function is not performant. To make this better, we can reduce the number of calls by _storing_ the results of the ones we've already made.
+
+The typical data structure to do this is an object. Store results in this object, and look up the values. If the property isn't stored, compute.
+
+**understand**
+input: an integer representing the fib num we want to calculate
+output: the num at that step in the fib sequence
+rules:
+  * use momoization to reduce the number of lookups needed.
+
+**examples**
+
+**algo**
+declare new empty obj
+call the fib function and supply an argument
+check if the arg value is less than or equal to 2
+check if the arg value is stored in our object
+if yes, return that value
+if no, compute that value and store it in our object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# fibonacci Procedural
+
+**understand**
+input: integer, representing the fib number we want to calculate
+output: the number at that step in the fib sequence
+Rules
+  * instead of using recursion, do with Procedural
+
+**algo**
+set fib1 to 1
+set fib2 to 1
+calculate fib3 as fib1 + fib2
+calculate fibn as (fibn - 2) + (fibn - 1)
+
+while len of fib array is less than n, fibn = fibn - 2 + fibn - 1, push to array
+
+then return last value
+
+
+
+# Word to Digit
+
+**understand**
+input: string
+output: string, with number words converted to digit characters
+rules
+* zero - nine should convert to 0 to 9
+* string should be returned with those convertions made
+
+**examples**
+
+`wordToDigit('Please call me at five five five one two three four. Thanks.');`
+// "Please call me at 5 5 5 1 2 3 4. Thanks."
+
+
+**algo**
+
+convert sentence to array split by space
+loop over each word and check if a num word
+  if yes, convert to digit char and return
+  if no, return word
+join word and return as new string
+
+other problem: dealing with non-alphabet characters. hmm.
+
+
+
+
+
+# Stack Machine Interpretation
+
+Stack:
+  * grows and shrinks dynamically
+  * implemented as array using `pop()` and `push()`
+
+Stack and register
+  * uses a stack of values
+  * operates on a register, which is:
+    * not part of the stack
+    * thought of as the current value
+
+Example
+  * operation operates on 2 values
+  * takes the topmost item from the stack and the value in the register
+  * runs the operation on those 2 values
+  * saves the result back to the register
+
+MULT example
+  * takes the value from the stack
+  * takes the value from the register
+  * multiplies them
+  * stores the result in the register
+
+
+Required commands:
+  * n
+  * PUSH
+  * ADD
+  * SUB
+  * MULT
+  * DIV
+  * MOD
+  * POP
+  * PRINT
+
+
+**understand**
+Input: string of commands, each command having a different meaning
+Output: integer
+Rules
+  * initialize stack and register values to `[]` and `0`
+  * see above for commands
+  * all operations are integer operations
+
+**examples**
+_see exercise page for examples_
+
+**algo**
+
+call function with command argument
+initialize stack and register values to their starting values
+split argument variable into array
+loop through array and act on each command
+
+
+for the latter, seems like I could do two things:
+  * have separate functions for each command
+  * have all commands within one function
+
+forEach loop with a case?
+
+
+
+
+
+
+
 # rotation three
 
 **understand**
@@ -21,14 +175,14 @@ split it into a string or array
 starting at index 0
   - move digit at index zero to end
   - increase index to 1
-  - move digit at index 1 to end 
+  - move digit at index 1 to end
 
 
 
 str = '12345'
     - 23451
     - 24513
-    - 
+    -
 
 
 
@@ -72,7 +226,7 @@ turn number into string or array
 slice the selected number from data
     - num.splice(loc, 1)
 return rest of numbers
-    - 
+    -
 append sliced number to end
 return new number
 
