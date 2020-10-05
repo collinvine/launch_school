@@ -88,9 +88,7 @@ function dealerTurn(deck, dealerHand) {
 }
 
 function busted(hand) {
-  let total = countHand(hand);
-
-  return total > 21;
+  return countHand(hand) > 21;
 }
 
 function countHand(hand) {
