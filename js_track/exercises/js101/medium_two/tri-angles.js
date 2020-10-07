@@ -8,7 +8,7 @@ let triangle = (a, b, c) => {
   } else if (tri[0] < 90 && tri[1] < 90 && tri[2] < 90) {
     return "acute";
   } else {
-    return "right"
+    return "right";
   }
 }
 
