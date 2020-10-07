@@ -1,3 +1,58 @@
+# 8. Longest Sentence
+
+**Understand**
+input: string (a bunch of sentences)
+output: log to the console:
+  * the longest sentence
+  * the count of words in that sentence
+rules
+  * sentences are split by `.` `!` or `?`
+  * must preserve all string characteristics (case, punctuation, spacing)
+
+
+**algo**
+
+
+
+
+
+
+
+# 7. Bubble Sort
+
+**Understand**
+input: array
+output: sorted array
+rules
+  * implement a bubble sort algorithm 
+  * bubble sort continually iterates over the array comparing two elements at a time
+    * if the first element is greater than the second element, swap
+    * else, no swap
+  * keep iterating until a full iteration with no swaps
+  * the swapping needs to happen in place, meaning it mutates the original
+
+**examples** 
+see exercise page for test case
+
+**algo**
+how to move elements in place?
+how to keep comparing until no more swaps?
+
+take an array
+get first two elements
+compare them
+if first is greater than second, swap (else leave)
+get next two elements
+compare them
+
+if there was a swap during iteration, iterate again
+if there wasn't, stop iterating and return array
+
+
+
+
+
+
 # 5. Featured Numbers
 
 **Understand**
