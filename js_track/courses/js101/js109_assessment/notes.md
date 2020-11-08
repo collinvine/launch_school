@@ -1,11 +1,99 @@
 _Coding the "Watch others code" problems_
 _See [here](https://launchschool.com/lessons/cdfe3681/assignments/e1c213df)_
 
+# Prob 3: 
+https://ls-general-public.s3.amazonaws.com/watch_others_code_js/watch_others_code_js_3.mp4
+
+**Problem**
+Given 2 strings, your job is to find out if there is a substring that appears in both strings. You will return true if you find a substring that appears in both strings, or false if you do not. We only care about substrings that are longer than one letter long.
+
+**Understand**
+Input: two strings
+Output: boolean
+Rules
+  * not case sensitive?
+  * substrings must be longer than 1 char
+  * if a string is empty, return false
+  * order doesn't matter
+
+**Algo**
+
+Tests:
+  * if either string is 1 or less char in length, return false
+
+create an array of substrings from one of the strings
+  two sub processes:
+    leading substrings (starting at index x, create substrings for each)
+for each substring, test to see if it matches a substring in other string
+if match, return true; else false
+
+
+
+
+
+
+# Prob 2: Substring reconstruction
+https://ls-general-public.s3.amazonaws.com/watch_others_code_js/watch_others_code_2_js.mp4
+
+**Problem**
+Given a non-empty string check if it can be constructed by taking a substring of it and appending multiple copies of the substring together. You mnay assume the given string consists of lowercase EN leters only.
+
+Eg.
+
+Input: 'abab'
+Output: true
+Explanation: It's the substring 'ab' twice
+
+Input: 'aba'
+Output: false
+
+``` js
+console.log(repeatedSubstringPattern("abab") === true); // true
+console.log(repeatedSubstringPattern("aba") === false); // true
+console.log(repeatedSubstringPattern("aabaaba") === false); // true
+console.log(repeatedSubstringPattern("abaababaab") === true); // true
+console.log(repeatedSubstringPattern("abcabcabcabc") === true); // true
+```
+
+**Understand**
+Input: string
+Output: boolean (true or false)
+Rules:
+  * string is en letter chars only
+  * string is not empty
+  * string is lowercase only
+
+**algo**
+Take string
+Break into substring
+  * slice index 0 and x
+
+Test if substring can be combined to match original string
+  * is length divisible by length? if no, try next substr
+  * is substr length greater than 1/2 str length? if yes, break loop & return false
+  * actual test:
+    * how many times does substring divide into str length?
+    * repeat that many times
+    * check for equality between substr + repeat and original str
+    * if equal, set boolean to true
+
+Repeat (need to test all versions of substring that "work")
+
+Return boolean result 
+
+Several tests:
+  * 1 and prime numbers aside from 2 fail
+    * 1, 3, 5, 7, 11, 13, 17, 19, 23, 31, 37, 41, 47, 53, 59, 61, 71, 73, 79, 83, 89, 97
+  * if all letters are same and greater than 1, it is true
+
+
+
+
 # Prob 1: Next Largest Integer
 https://ls-general-public.s3.amazonaws.com/watch_others_code_js/watch_others_code_final_js_1.mp4
 
 **Problem**
-You have to create a function that takes  sapositive integer number and returns the next biggest number formed by the same digits:
+You have to create a function that takes a positive integer number and returns the next biggest number formed by the same digits:
 
 // 12 ==> 21
 // 513 ==> 531

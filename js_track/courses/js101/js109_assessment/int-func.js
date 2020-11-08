@@ -1,29 +1,33 @@
-/* eslint-disable no-unused-vars */
-let nextBiggestNum = num => {
-  let str = num.toString();
-  let allCombos = [];
+let checkForEdgeCases = num => {
+  let numLengthIs1 = String(num).length === 1;
+  let reverseNum = Number(String(num).split('').sort((a, b) => b - a).join(''));
+  let uniqueValues = new Set(String(num).split('')).size;
 
-  for (let i = 0; i < str.length; i += 1) {
-    allCombos.push(allCombinations(str.slice(i)));
-    debugger;
+  if (numLengthIs1 || reverseNum === num || uniqueValues === 1) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+let nextLargest = num => {
+  let nextNum = num;
+
+  if (checkForEdgeCases(num)) return -1;
+
+  while (true) {
+    nextNum += 1;
+
+    if (String(nextNum).split('').sort().join('') === String(num).split('').sort().join('')) break;
   }
 
-  console.log(allCombos);
-}
+  return nextNum;
+};
 
-let allCombinations = string => {
-  let combos = [];
-
-  for (let i = 1; i <= string.length; i += 1) {
-    let newStr = string.slice(0, i);
-    combos.push(newStr);
-    debugger;
-  }
-
-  console.log(combos);
-
-  return combos;
-}
-
-
-nextBiggestNum(125);
+console.log(nextLargest(9));
+console.log(nextLargest(12));
+console.log(nextLargest(513));
+console.log(nextLargest(2017));
+console.log(nextLargest(111));
+console.log(nextLargest(531));
+console.log(nextLargest(123456789));
