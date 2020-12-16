@@ -1,3 +1,27 @@
+# Fibonacci memoization
+
+Approach is to use a lookup table (object) for storing results.
+So I need a way to store results, and if a result is stored, access it. Else, compute it.
+
+{
+  fib1
+  fib2
+  fib3
+}
+
+what key value pair names should be?
+how to store new values into the object?
+how to access previously stored values in the object?
+
+
+
+if (obj[num]) { return obj[num]}
+else (obj[num] = fib(num))
+
+
+
+
+
 # word to digit
 
 **understand**
